@@ -8,6 +8,14 @@ body {
   margin: 0;
 }
 
+/* We calculated the length of our X line using trigonometry, 
+based on the height, knowing it forms a 45-degree angle due 
+to our rotation. Since this creates a 90-degree triangle, we 
+precisely determine the length needed, which is the square 
+root of 2 times the height. After this multiplication, since 
+our line width exceeds 0 pixels, we simply offset it by half 
+the line size to ensure perfect alignment. */
+
 /* CSS Variables */
 :root {
   --bar-width: 60px;
@@ -57,11 +65,13 @@ body {
 .hamburgerMenu:has(input:checked)::before {
   rotate: 45deg;
   width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
 }
 
 .hamburgerMenu:has(input:checked)::after {
   rotate: -45deg;
   width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
 }
 
 .hamburgerMenu input:checked {

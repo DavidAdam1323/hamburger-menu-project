@@ -42,6 +42,18 @@ the line size to ensure perfect alignment. */
   cursor: pointer;
 }
 
+.hamburgerMenu:has(input:checked) {
+  --foreground: white;
+  --background: #333;
+}
+
+.hamburgerMenu:has(input:focus-visible)::before,
+.hamburgerMenu:has(input:focus-visible)::after,
+.hamburgerMenu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
 .hamburgerMenu::before,
 .hamburgerMenu::after,
 .hamburgerMenu input {

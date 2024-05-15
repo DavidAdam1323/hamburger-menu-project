@@ -51,7 +51,9 @@ the line size to ensure perfect alignment. */
   background-color: var(--foreground);
   border-radius: 9999px;
   transform-origin: left center;
-  transition: opacity var(--animation-timing), width var(--animation-timing);
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing, translate var(--animation-timing)),
+    background-color var(--animation-timing);
 }
 
 .hamburgerMenu input {
@@ -77,4 +79,19 @@ the line size to ensure perfect alignment. */
 .hamburgerMenu input:checked {
   opacity: 0;
   width: 0;
+}
+
+.sideBar {
+  transition: translate var(--animation-timing);
+  translate: -100%;
+  padding: 0.5rem 5rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  max-width: 15rem;
+  min-height: 100vh;
+}
+
+.hamburgerMenu:has(input:checked) + .sideBar {
+  translate: 0;
 }

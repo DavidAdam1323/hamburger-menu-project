@@ -47,3 +47,8 @@ body {
   outline: none;
   pointer-events: none;
 }
+
+.hamburgerMenu input:checked {
+  opacity: 0;
+  width: 0;
+}

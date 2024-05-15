@@ -39,6 +39,7 @@ body {
   height: var(--bar-height);
   background-color: var(--foreground);
   border-radius: 9999px;
+  transform-origin: left center;
   transition: opacity var(--animation-timing), width var(--animation-timing);
 }
 
@@ -48,6 +49,10 @@ body {
   margin: 0;
   outline: none;
   pointer-events: none;
+}
+
+.hamburgerMenu:has(input:checked)::before {
+  rotate: 45deg;
 }
 
 .hamburgerMenu input:checked {
